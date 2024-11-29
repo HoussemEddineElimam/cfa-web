@@ -1,1 +1,0 @@
-import{j as t}from"./index-RIHZxBgS.js";import{C as o}from"./ContactSection-DyPLwF7z.js";import{H as r}from"./HeadingBanner-wP1GFzG0.js";import"./phone_icon-CNswMjw3.js";const n=()=>t.jsxs("div",{id:"contact_page",children:[t.jsx(r,{title:"Nous Sommes a Votre Ecoute"}),t.jsx(o,{})]});export{n as default};

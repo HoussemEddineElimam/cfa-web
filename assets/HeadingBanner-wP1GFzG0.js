@@ -1,1 +1,0 @@
-import{j as e}from"./index-RIHZxBgS.js";const n=""+new URL("Header-DFgYkx-D.png",import.meta.url).href,s=({title:r})=>e.jsxs("div",{id:"heading-banner",children:[e.jsx("img",{src:n}),e.jsx("h1",{children:r})]});export{s as H};
