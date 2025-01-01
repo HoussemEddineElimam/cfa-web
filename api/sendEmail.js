@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: "Méthode non autorisée. Utilisez POST." });
     }
 
-    const { fullname, email, phone } = req.body;
+    const { fullname, email, phone ,courseName } = req.body;
 
     if (!fullname || !email || !phone) {
         return res.status(400).json({ error: "Tous les champs (nom complet, email, téléphone) sont requis." });
@@ -27,10 +27,12 @@ export default async function handler(req, res) {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER,
-            subject: "Nouvelle soumission de formulaire",
+            subject: "Une nouvelle inscription à un cours.",
             text: `Vous avez une nouvelle soumission depuis votre page de destination :\n\nNom complet : ${fullname}\nEmail : ${email}\nTéléphone : ${phone}`,
             html: `
-                <h1>Nouvelle soumission de formulaire</h1>
+                <h1>Vous avez une nouvelle inscription à un cours.</h1>
+                <h4>${courseName}</h4>
+                <br>
                 <p><strong>Nom complet :</strong> ${fullname}</p>
                 <p><strong>Email :</strong> ${email}</p>
                 <p><strong>Téléphone :</strong> ${phone}</p>
