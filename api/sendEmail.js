@@ -30,12 +30,14 @@ export default async function handler(req, res) {
             subject: "Une nouvelle inscription à un cours.",
             text: `Vous avez une nouvelle soumission depuis votre page de destination :\n\nNom complet : ${fullname}\nEmail : ${email}\nTéléphone : ${phone}`,
             html: `
-                <h1>Vous avez une nouvelle inscription à un cours.</h1>
-                <h4>${courseName}</h4>
-                <br>
-                <p><strong>Nom complet :</strong> ${fullname}</p>
-                <p><strong>Email :</strong> ${email}</p>
-                <p><strong>Téléphone :</strong> ${phone}</p>
+                <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                    <h1 style="color: #4CAF50;">Vous avez une nouvelle inscription à un cours.</h1>
+                    <h2 style="color: #333; margin-top: 10px;">${courseName}</h2>
+                    <hr style="border: none; border-top: 2px solid #4CAF50; margin: 20px 0;" />
+                    <p><strong>Nom complet :</strong> ${fullname}</p>
+                    <p><strong>Email :</strong> ${email}</p>
+                    <p><strong>Téléphone :</strong> ${phone}</p>
+                </div>
             `,
         };
 
