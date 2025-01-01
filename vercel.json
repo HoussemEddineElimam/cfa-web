@@ -1,8 +1,23 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "EMAIL_USER": "@email_user",
+    "EMAIL_PASS": "@email_pass",
+    "EMAIL_RECEIVER": "@email_receiver"
+  },
+  "functions": {
+    "api/sendEmail.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
   }
+}
